@@ -12,10 +12,11 @@ SO THAT I can keep a list of books to purchase
 ## Demonstration of application functionality
 ---
 <img src="./assets/21-mern-homework-demo-01.gif" alt="demo-1" />
----
+Search for books
 <img src="./assets/21-mern-homework-demo-02.gif" alt="demo-2" />
----
+Save books
 <img src="./assets/21-mern-homework-demo-03.gif" alt="demo-3" />
+Delete books
 
 
 ## Deployed URL
