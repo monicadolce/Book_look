@@ -52,10 +52,17 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
     // Set up mutation so a logged in user can only remove their profile and no one else's
-    removeBook: async (parent, args, context) => {
+    removeBook: async (parent, { bookId }, context) => {
       if (context.user) {
-        return User.findOneAndDelete({ _id: context.user._id });
-      }
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { savedBooks: { bookId } } },
+          { new: true } 
+          );
+
+          return updatedUser;
+        }
+    
       throw new AuthenticationError('You need to be logged in!');
     },
   },
