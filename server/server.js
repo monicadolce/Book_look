@@ -10,8 +10,7 @@ const { typeDefs, resolvers } = require('./schemas');
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: authMiddleware,
-  persistedQueries: false,
+  context: authMiddleware 
 });
 
 const app = express();
